@@ -1,0 +1,29 @@
+{
+  "name": "root",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "build": "ts-node src/main.ts",
+    "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore",
+    "lint": "eslint ./ --ext ts,tsx",
+    "lint:fix": "eslint ./ --ext ts,tsx --fix",
+    "test": "yarn test:jasmine & yarn test:jest & yarn test:mocha & yarn test:vitest",
+    "test:jasmine": "yarn workspace @nekohack/jasmine test",
+    "test:jest": "yarn workspace @nekohack/jest test",
+    "test:mocha": "yarn workspace @nekohack/mocha test",
+    "test:vitest": "yarn workspace @nekohack/vitest test"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.30.7",
+    "@typescript-eslint/parser": "^5.30.7",
+    "eslint": "^8.20.0",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "workspaces": [
+    "tests/*"
+  ]
+}
